@@ -1,0 +1,23 @@
+
+@keyframes wave {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.wave {
+    position: relative;
+    height: 20px;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.5), rgba(255,255,255,0.2));
+}
+
+.wave::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: inherit;
+    animation: wave 3s linear infinite;
+}
